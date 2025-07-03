@@ -3,6 +3,7 @@ class Solution {
   public:
     int lowerBound(vector<int>& arr, int target) {
         // code here
+        
         int n = arr.size();
         
         int low = 0, high = n - 1;
