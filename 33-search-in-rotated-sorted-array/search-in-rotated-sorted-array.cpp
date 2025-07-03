@@ -7,7 +7,8 @@ public:
         {
             int mid = low + (high - low) / 2;
             if(nums[mid] == target) return mid;
-            else if(nums[mid] >= nums[low]) // is sorted ? 
+            else {
+                if(nums[mid] >= nums[low]) // is sorted ? 
                 {
                     if(nums[low] <= target && target < nums[mid])
                     {
@@ -30,7 +31,7 @@ public:
                     }
                 }
             
-            
+            }
          
         }
         return -1;
