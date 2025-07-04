@@ -1,7 +1,7 @@
-long long calcHours(vector<int> piles, int mid) {
-    long long sum = 0;
+long long  calcHours(vector<int>& piles, int mid) {
+    long long  sum = 0;
     for (int i = 0; i < piles.size(); i++) {
-        sum += ceil((double)piles[i] / mid);
+        sum += (piles[i]+ mid - 1)/mid;
     }
     return sum;
 }
