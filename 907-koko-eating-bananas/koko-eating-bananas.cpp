@@ -1,7 +1,7 @@
 long long  calcHours(vector<int>& piles, int mid) {
-    long long  sum = 0;
-    for (int i = 0; i < piles.size(); i++) {
-        sum += (piles[i]+ mid - 1)/mid;
+    long long   sum = 0;
+    for (int i : piles) {
+        sum += (i + mid - 1)/mid;
     }
     return sum;
 }
@@ -14,11 +14,11 @@ public:
         }
         int ans = INT_MAX;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
-            long long total_hours = calcHours(piles, mid);
+            long long  mid = low + (high - low) / 2;
+            long long  total_hours = calcHours(piles, mid);
 
             if (total_hours <= h) {
-                ans = min(ans, mid);
+                ans = (int)mid;
                 high = mid - 1;
             } else {
                 low = mid + 1;
