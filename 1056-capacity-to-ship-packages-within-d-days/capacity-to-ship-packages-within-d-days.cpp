@@ -20,7 +20,7 @@ class Solution {
 public:
     int shipWithinDays(vector<int>& weights, int days) {
         int n = weights.size();
-        int ans = -1;
+        //int ans = -1;
         int low = INT_MIN;
         for(int i = 0; i<n; i++)
         {
@@ -39,7 +39,7 @@ public:
 
             if(day <= days)
             {
-                ans = mid;
+                //ans = mid;
                 high = mid - 1;
             }
             else
@@ -47,6 +47,6 @@ public:
                 low = mid + 1;
             }
         }
-        return ans;
+        return low;
     }
 };
