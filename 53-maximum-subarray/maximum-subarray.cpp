@@ -6,7 +6,7 @@ public:
         for(int i = 0; i<n; i++)
         {
             sum += nums[i];
-            if(sum > largest) largest = max(sum, largest);
+            if(sum > largest) largest = sum;
             if(sum < 0) sum = 0;
         }
         
