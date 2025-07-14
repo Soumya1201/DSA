@@ -10,7 +10,7 @@ public:
                                     }
         
         int longStreak = 0;
-        for(int it : st)
+        for(auto it : st)
         {
             if(st.find(it - 1) == st.end())
             {
