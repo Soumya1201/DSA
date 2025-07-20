@@ -2,11 +2,9 @@ class Solution {
   public:
     int majorityElement(vector<int>& arr) {
         // code here
-   
-        int n = arr.size();
         int ele;
+        int n = arr.size();
         int count = 0;
-        
         for(int i = 0; i<n; i++)
         {
             if(count == 0)
@@ -14,19 +12,16 @@ class Solution {
                 count = 1;
                 ele = arr[i];
             }
-            
-            else if(arr[i] == ele) count++;
+            else if(ele == arr[i]) count++;
             else count--;
         }
-        int cnt = 0;
+        int c = 0;
         for(int i = 0; i<n; i++)
         {
-            if(arr[i] == ele) cnt++;
+            if(ele == arr[i]) c++;
         }
         
-        if(cnt > (n / 2)) return ele;
+        if(c > (n / 2)) return ele;
         return -1;
     }
-
-    
 };
