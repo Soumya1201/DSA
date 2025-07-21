@@ -4,15 +4,15 @@ public:
         string ans = "";
         int n = address.size();
     
-        for(char ch : address)    
+        for(int i = 0; i<n; i++)    
         {
-            if(ch == '.')
+            if(address[i] == '.')
             {
                 ans += "[.]";
             }
             else
             {
-                ans += ch;
+                ans += address[i];
             }
         }
         return ans;
