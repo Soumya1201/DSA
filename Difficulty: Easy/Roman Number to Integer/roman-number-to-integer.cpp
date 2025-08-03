@@ -1,4 +1,4 @@
-int getValue(char ch )
+int getValue(char ch)
 {
     switch(ch)
     {
@@ -9,23 +9,21 @@ int getValue(char ch )
         case 'C' : return 100;
         case 'D' : return 500;
         case 'M' : return 1000;
-        default: return 0;
+        default : return 0;
     }
 }
+
 class Solution {
   public:
     int romanToDecimal(string &s) {
+        
         // code here
         int n = s.length();
         int sum = 0;
-        for(int i = 0; i<n; i++)
+        for(int i = 0; i < n; i++)
         {
-            char ch = s[i];
-            if(i + 1 < n && getValue(ch) < getValue(s[i+1]))
-            {
-                sum = sum - getValue(ch);
-            }
-            else sum = sum + getValue(ch);
+            if(i+1 < n && getValue(s[i]) < getValue(s[i+1])) sum -= getValue(s[i]);
+            else sum += getValue(s[i]);
         }
         return sum;
     }
