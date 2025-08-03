@@ -2,21 +2,19 @@ class Solution {
   public:
     void mergeArrays(vector<int>& a, vector<int>& b) {
         // code here
-        int n = a.size();
-        int m = b.size();
+        vector<int>temp;
+        for(int i = 0; i<a.size();i++) temp.push_back(a[i]);
+        for(int i = 0; i<b.size(); i++) temp.push_back(b[i]);
         
-        int left = n-1, right = 0;
-        while(left >= 0 && right < m)
+        sort(temp.begin(), temp.end());
+        
+        for(int i = 0; i<a.size(); i++)
         {
-            if(a[left] > b[right])
-            {
-                swap(a[left], b[right]);
-                left--;
-                right++;
-            }
-            else break;
+            a[i] = temp[i];
         }
-        sort(a.begin(), a.end());
-        sort(b.begin(), b.end());
+        for(int i = 0; i<b.size(); i++)
+        {
+            b[i] = temp[i + a.size()];
+        }
     }
 };
