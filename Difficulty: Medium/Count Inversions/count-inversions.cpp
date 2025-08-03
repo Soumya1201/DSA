@@ -1,9 +1,9 @@
-int merge(vector<int> &arr, int low, int mid, int high)
+int merge(vector<int>&arr, int low, int mid, int high)
 {
     int left = low;
-    int count = 0;
     int right = mid + 1;
-    vector<int> temp;
+    int count = 0;
+    vector<int>temp;
     while(left <= mid && right <= high)
     {
         if(arr[left] <= arr[right])
@@ -28,14 +28,14 @@ int merge(vector<int> &arr, int low, int mid, int high)
         temp.push_back(arr[right]);
         right++;
     }
-    for(int i = low; i<= high; i++)
+    for(int i = low; i<=high; i++)
     {
         arr[i] = temp[i-low];
     }
     return count;
 }
 
-int mergeSort(vector<int> &arr, int low, int high)
+int mergeSort(vector<int>&arr, int low, int high)
 {
     int count = 0;
     if(low >= high) return count;
@@ -46,13 +46,10 @@ int mergeSort(vector<int> &arr, int low, int high)
     
     return count;
 }
-
 class Solution {
   public:
     int inversionCount(vector<int> &arr) {
         // Code Here
-        int n = arr.size();
-        return mergeSort(arr, 0, n-1);
-        
+        return mergeSort(arr,0, arr.size() - 1);
     }
 };
