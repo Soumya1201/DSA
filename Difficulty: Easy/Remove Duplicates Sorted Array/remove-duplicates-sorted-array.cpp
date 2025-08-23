@@ -4,15 +4,17 @@ class Solution {
     vector<int> removeDuplicates(vector<int> &arr) {
         // code here
         int n = arr.size();
-        vector<int> ans;
-        ans.push_back(arr[0]);
-        for(int j = 1; j<n; j++)
+        if(n == 0) return {};
+        
+        vector<int> temp;
+        temp.push_back(arr[0]);
+        for(int i = 1; i<n; i++)
         {
-            if(arr[j-1] != arr[j])
+            if(arr[i] != arr[i-1])
             {
-                ans.push_back(arr[j]);
+                temp.push_back(arr[i]);
             }
         }
-        return ans;
+        return temp;
     }
 };
