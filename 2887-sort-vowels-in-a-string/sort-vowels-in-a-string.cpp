@@ -1,56 +1,28 @@
 class Solution {
 public:
     string sortVowels(string s) {
-        vector<int>lower(26, 0);
-        vector<int>upper(26, 0);
+        string vowel = "AEIOUaeiou";
+        vector<char> res;
 
-        for(int i = 0; i < s.size(); i++)
+        for(int i = 0; i<s.size(); i++)
         {
-            if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
+            if(s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U' || 
+            s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u')
             {
-                lower[s[i] - 'a']++;
-                s[i] = '#';
-            }
-            if(s[i] == 'A' || s[i] == 'E' || s[i] == 'I' || s[i] == 'O' || s[i] == 'U')
-            {
-                upper[s[i] - 'A']++;
-                s[i] = '#';
+                res.push_back(s[i]);
             }
         }
-        string vowel;
+        sort(res.begin(), res.end());
 
-        for(int i = 0; i<26; i++)
+        int i = 0;
+        for(auto &it : s)
         {
-            char c = 'A' + i;
-            while(upper[i])
+            if(vowel.find(it) != string::npos)
             {
-                vowel += c;
-                upper[i]--;
+                it = res[i];
+                i++;
             }
         }
-
-        for(int i = 0; i<26; i++)
-        {
-            char c = 'a' + i;
-            while(lower[i])
-            {
-                vowel += c;
-                lower[i]--;
-            }
-        }
-
-        int first = 0, second = 0;
-        while(second < vowel.size())
-        {
-            if(s[first] == '#')
-            {
-                s[first] = vowel[second];
-                second++;
-            }
-            first++;
-        }
-
         return s;
-
     }
 };
