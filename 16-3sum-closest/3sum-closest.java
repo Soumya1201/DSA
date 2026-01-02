@@ -27,7 +27,8 @@ class Solution {
                 }
 
                 if(sum < target) left++;
-                else right--;
+                else if(sum > target) right--;
+                else return sum;
             }
         }
         return resSum;
