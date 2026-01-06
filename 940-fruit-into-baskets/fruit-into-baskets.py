@@ -22,7 +22,7 @@ class Solution:
                 low = low + 1
 
             if len(freq) <= 2:
-                length = sum(freq.values())
+                length = high - low + 1
                 res = max(res, length)   # 2,3 
 
         if res == float('-inf'): return 1
