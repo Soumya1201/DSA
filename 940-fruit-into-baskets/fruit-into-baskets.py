@@ -21,7 +21,7 @@ class Solution:
                 
                 low = low + 1
 
-            if len(freq) == 2 or  len(freq) == 1:
+            if len(freq) <= 2:
                 length = sum(freq.values())
                 res = max(res, length)   # 2,3 
 
