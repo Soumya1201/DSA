@@ -7,7 +7,7 @@ class Solution:
 
         low = 0
         high = 0
-        res = float('-inf')
+        res = 0
 
         for high in range(n):
 
@@ -24,5 +24,4 @@ class Solution:
             length = high - low + 1
             res = max(res, length)  # 2, 3
 
-        if res == float('-inf'): return 0
-        else: return res
+        return res
