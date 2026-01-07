@@ -4,7 +4,7 @@ class Solution:
         n = len(fruits)
 
         low  = high = 0
-        res = float('-inf')
+        res = 1
         
         freq = {}
 
@@ -25,5 +25,4 @@ class Solution:
                 length = high - low + 1
                 res = max(res, length)   # 2,3 
 
-        if res == float('-inf'): return 1
-        else: return res
+        return res
